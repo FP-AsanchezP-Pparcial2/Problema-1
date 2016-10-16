@@ -1,0 +1,38 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication14;
+import java.util.Scanner
+/**
+ *
+ * @author Alejandro
+ */
+public class JavaApplication14 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int N;
+        N=InsertarNumero();
+        mostrarenpartes(N);
+        
+        // TODO code application logic here
+    }
+    public static int InsertarNumero(){
+        int N;
+        Scanner entrada = new Scanner(System.in);
+        System.out.print("Inserta el numero que se va a partir en componentes ");
+        N =entrada.nextInt();
+        return N;
+    }
+    public static void mostrarenpartes(int n){
+        System.out.print(n+" = ");
+        for(int i=10;i<n*10;i=i*10){
+            System.out.print(((n%i)/(i/10))*(i/10));
+            if ((i<n))System.out.print(" + ");
+        }
+        
+    }
