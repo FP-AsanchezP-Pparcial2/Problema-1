@@ -1,0 +1,43 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package problem14;
+
+/**
+ *
+ * @author Alejandro
+ */
+public class Problem14 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int [][]v = new int [7][7];
+        v = pedirV(v);
+        mostrarV(v);
+    }
+    public static int [][] pedirV(int [][] v){
+        for(int i = 0;i<v.length;i++){
+            for (int w = 0;w<v.length;w++){
+                if(i==w){
+                    v[i][w]=1;
+                }else {
+                    v[i][w]=0;
+                }
+            }
+        }
+        return v;
+    }
+    public static void mostrarV(int[][] v){
+        for(int i=0;i<v.length;i++){
+            for(int w=0;w<v.length;w++){
+                System.out.print(v[i][w]+"\t");
+            }
+            System.out.print("\n");
+        }
+    }
+    }
+    
