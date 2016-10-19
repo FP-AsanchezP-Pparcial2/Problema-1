@@ -1,0 +1,43 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication17;
+import java.util.*;
+/**
+ *
+ * @author Alejandro
+ */
+public class JavaApplication17 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int B[]=new int[10];
+        
+        
+        B = solicitarN(B);
+        Media(B);
+// TODO code application logic here
+    }
+    public static int[] solicitarN(int [] B){
+        for(int i=0;i<B.length;i++){
+            Scanner teclado = new Scanner (System.in);
+            System.out.println("insera el numero" +(i+1)+ "a calcular");
+            B[i] = teclado.nextInt();
+        }
+        
+        
+        return B;
+    }
+    public static void Media(int [] B){
+        int s=0;
+        for (int i = 1 ; i<B.length; i+=2){
+        s = B[i]+s;
+        }
+        System.out.println("es igual a "+(s/5));
+    }
+    
+}
