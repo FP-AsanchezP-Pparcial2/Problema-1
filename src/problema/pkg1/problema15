@@ -1,0 +1,57 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package problem16;
+import java.util.*;
+/**
+ *
+ * @author Alejandro
+ */
+public class Problem16 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+          int[][] V = new int[11][11];
+        LLena(V);
+        Imprime(V);
+
+        // TODO code application logic here
+    }
+    public static int [][] LLena(int[][] V){
+        Random r = new Random();
+        for(int i=0;i<V.length;i++){
+            for(int w=0;w<V.length;w++){
+                if(w==10){
+                    int d=0;
+                    for(w=0;w<V.length-1;w++){
+                        d = V[i][w]+d;
+                    }
+                    V[i][w]=d;
+                } 
+                else V[i][w]=r.nextInt();
+                if(i==10){
+                    int d=0;
+                    for(i=0;i<V.length-1;i++){
+                        d = V[i][w]+d;
+                    }
+                    V[i][w]=d;
+                }
+            }
+        }
+        return V;
+    }
+    public static void Imprime(int[][] V){
+        for(int i=0;i<V.length;i++){
+            for(int w=0;w<V.length;w++){
+                System.out.print(V[i][w]+"\t");
+            }
+            System.out.print("\n");
+        }
+    }
+
+
+}
