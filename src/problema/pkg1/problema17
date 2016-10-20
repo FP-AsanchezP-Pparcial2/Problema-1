@@ -31,7 +31,7 @@ public class JavaApplication25 {
     public static double CalculaDivisor(double a, double b){
         double d=0,y;
         y=a;
-        if (b>y)y=b;
+        if (b<y)y=b;
         for (int i=1;i<=y;i++){
             if (a%i==0&&b%i==0)
                 d=i;
