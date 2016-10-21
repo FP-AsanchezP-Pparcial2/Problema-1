@@ -1,0 +1,49 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication10;
+import java.util.Scanner
+/**
+ *
+ * @author Alejandro
+ */
+import static javaapplication10.JavaApplication10.Resultado;
+public class JavaApplication10 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int N;
+        boolean R;// declaras R como boleano para que te analize el numero bajo una condicion que regrese un valor booleano
+        System.out.println("inserta el numero que deseas evaluer");
+        N = solicitarnumero();
+        R = Resultado(N);
+        ImprimirPrimo(R);
+        // TODO code application logic here
+    }
+    public static int solicitarnumero(){//metodo para solicitar numero por teclado
+        int N;
+        Scanner teclado = new Scanner (System.in);
+        N = teclado.nextInt();
+        return N;
+    }
+    public static boolean Resultado(int  N){//metodo que analiza a N para devolverlo como boleano
+      if(N==2) return true;// si N es igual a 2 es numero si es primo
+      if (N<2) return false;//si el numero es menor a 2 el numero no es primo
+      if((N%2)==0) return false;//si tu numero dividido entre 2 siendo el reciproco igual a 0 el numero no es primo
+       for(int i=3;i*i<N;i+=2){//ciclo for que divide el numero entre 3 y los numeros impares para que busque otros dividendos
+            if (N%i==0) return false;
+        }
+            return true;
+    }
+    public static void ImprimirPrimo(boolean R){
+        if(R== true){
+            System.out.println("tu numero es primo");
+        }else{ 
+            System.out.println(" tu numero no es primo");
+        }
+    }
+}
