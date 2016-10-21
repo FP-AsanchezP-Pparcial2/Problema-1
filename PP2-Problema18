@@ -1,0 +1,53 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package problem18;
+import java.util.*;
+
+/**
+ *
+ * @author Alejandro
+ */
+public class Problem18 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+         int a,b,c,MCM;
+         System.out.println("primer numero");
+        a=SolicitarN();
+        System.out.println ("segundo numero");
+        b=SolicitarN();
+        System.out.println("tercer numero");
+        c=SolicitarN();
+        MCM = Evaluar(a,b,c);
+        System.out.println("el MCM es igual a "+MCM);
+        
+        // TODO code application logic here
+    }
+    public static int SolicitarN(){// metodo para solicitar valores por teclado
+        Scanner teclado = new Scanner(System.in);
+        System.out.print("Ingrese el Numero ");
+        int N=teclado.nextInt();
+        return N;
+}
+    public static int Evaluar(int a, int b,int c){
+        int mcm=1,me;
+        me=a;
+        if(me<b)me=b;// guarda el valor mas grande
+        if(me<c)me=c;
+        for (int i=2;i<=me;i++){// inicia ciclo for que buscara los factores y se detendra hasta encontrar el mayor 
+            if (a%i==0||b%i==0||c%i==0){
+                mcm=mcm*i;
+                if (a%i==0) a=a/i;// si el numero es divisible por el factor se disminuira el valor
+                if (b%i==0) b=b/i;
+                if (c%i==0) c=c/i;
+                
+            }
+        }
+        return mcm;
+    }
+}
