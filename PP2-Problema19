@@ -1,0 +1,31 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package problema19;
+import java.util.*;
+/**
+ *
+ * @author Alejandro
+ */
+public class Problema19 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        double a;
+        a = pedirAngulo();
+        mostrarA(a);// TODO code application logic here
+    }
+    public static double pedirAngulo(){// metodo para pedir valores por teclado
+        System.out.println("inserta el angulo a calcular");
+        Scanner teclado = new Scanner (System.in);
+        double a = teclado.nextDouble();
+        return a;
+    }
+    public static void mostrarA(double a){
+        System.out.println("el seno es igual a"+Math.sin(a));// convierte el valor insertado en el seno
+        System.out.println(" el coseno es igual a"+ Math.cos(a));// convierte el valor insertado en el coseno
+        System.out.println("la tangente es igual a"+Math.tan(a));// convierte el valor insertado en el tangente
