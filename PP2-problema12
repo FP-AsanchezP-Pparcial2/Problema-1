@@ -1,0 +1,43 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication17;
+import java.util.*;
+/**
+ *
+ * @author Alejandro
+ */
+public class JavaApplication17 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int B[]=new int[10];// declaras B como un arreglo que tenga 10 posiciones
+        
+        
+        B = solicitarN(B);
+        Media(B);
+// TODO code application logic here
+    }
+    public static int[] solicitarN(int [] B){// metodo para que insertes los numeros que van a tener las 10 posiciones
+        for(int i=0;i<B.length;i++){// inicia el ciclo for para que repita la insercion de numeros hasta que llegue a 10
+            Scanner teclado = new Scanner (System.in);
+            System.out.println("insera el numero" +(i+1)+ "a calcular");
+            B[i] = teclado.nextInt();
+        }
+        
+        
+        return B;
+    }
+    public static void Media(int [] B){
+        int s=0;
+        for (int i = 1 ; i<B.length; i+=2){inicia el ciclo for para solo sumar los numeros de las posiciones pares
+        s = B[i]+s;
+        }
+        System.out.println("es igual a "+(s/5));/all divide el total entre 5 por que solo tomo las posiciones pares
+    }
+    
+}
