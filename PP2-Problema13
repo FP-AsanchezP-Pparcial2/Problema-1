@@ -1,0 +1,55 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication19;
+import java.util.*;
+/**
+ *
+ * @author Alejandro
+ */
+public class JavaApplication19 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {// la logica que seguira la aplicacion se encuentra aqui
+        int v[]= new int [30];
+        int P;
+        v = pedir();
+        P = promediov(v);
+        SoBaPromedio(v,P);
+        // TODO code application logic here
+    }
+    }
+    public static int[] pedir(int [] v){// metodo para insertar los 30 numeros por teclado
+        Scanner teclado = new Scanner(System.in);
+        for(int i=0;i<v.length;i++){// inicia ciclo for que pedira los 30 numeros
+            System.out.print("Para "+i+"inserta un numero");
+            v[i]=teclado.nextInt();
+        }
+        return v;
+    }
+    public static int promediov(int [] v){// metodo para el promedio
+        int p=0;
+        for (int i=0; i<v.length; i++){// inicia ciclo for que sumara todos los numeros
+            p = v[i]+p;
+            
+    }
+    System.out.println("promedio es "+(p/30));// la suma de los numeros entre el total es el promedio
+    return p;
+}
+    public static void SoBaPromedio(int [] v, int P){//metodo para decir cuantos estan arriba y abjo del promedio
+        int p=0;
+        for(int i=0;i<v.length;i++){// inicia ciclo for que aumenta para decir cuantos numeros esta arriba del promedio
+            if(v[i]>P){
+                p++;
+        
+    }
+        }System.out.println("arriba de "+p);
+        System.out.println("abajo de "+(v.length-p));// el total de numeros menos los que estan arriba es igual a los que etan abajo
+}    
+}
+Contact GitHub API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security 
