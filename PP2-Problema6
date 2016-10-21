@@ -1,0 +1,41 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package probvar;
+import java.util.*;
+/**
+ *
+ * @author Alejandro
+ */
+public class PROBVAR {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {//Main donde de pone lo que hace el programa
+        double H,S,ST;
+        System.out.println("inserta el salario");
+        S  = pedirN(); 
+        System.out.println("inserta las horas trabajadas");
+        H = pedirN(); 
+        ST = PagoTotal(H,S);
+        System.out.println("el salario total es "+ST);
+    }
+    public static double pedirN(){// metodo que pide numeros por teclados
+    Scanner teclado = new Scanner(System.in);
+    
+    double N=teclado.nextDouble();
+    return N;
+    }
+    public static double PagoTotal(double H,double S){
+        double ST;
+        ST=0;
+        if(H<=40) ST=H*S; //calcula el salario si son menos de 40 horas
+        if(H>=48) ST=((40*S)+(H-40)*(2*S)); //el salario si son entre 41 y 48 horas
+        if(H>48) ST=((40*S)+8*(2*S)+(H-48)*(3*S)); // el salario si son mas de 48 horas
+        return ST;
+}
+}
+    
