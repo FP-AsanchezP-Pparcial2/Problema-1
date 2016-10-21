@@ -1,0 +1,27 @@
+package problema4;
+import java.util.*;
+
+public class problema4 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        double C,F;
+        System.out.println("inserta un numero en grado Celcius"); 
+        C=SolicitarGrado();
+        F=CalcularGrado(C);
+        System.out.println(C+" grados celcius, es igual a "+F+ "grados Farenheit");// imprime el resultado con las variables concatenadas
+    }
+    public static double SolicitarGrado(){// metodo para solicitar dato por teclado
+        double C;
+        Scanner teclado = new Scanner(System.in);
+        C = teclado.nextDouble();
+        return C;
+    }
+    public static double CalcularGrado(double C){// declara 
+        double F;
+        F = ((C*1.82)+32);// declara F como la equivalencia de grados celcius a Farenheit
+        return F;
+    }
+}
