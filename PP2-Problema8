@@ -1,0 +1,37 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package javaapplication13;
+import java.util.Scanner
+/**
+ *
+ * @author Alejandro
+ */
+public class JavaApplication13 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        double c1,c2,h;
+        System.out.println("este programa te ayuda a calcular la hipotenusa de 2 catetos");
+        System.out.println("inserta los 2 catetos pra calcular la hipotenusa");
+        c1 = PedirCateto();// primero insertas ambos lados lo que abre un lado restante en el triangulo que es la hipotenusa
+        c2 = PedirCateto();
+        h = calcularH(c1,c2);// calculas la hipotenusa
+        System.out.println("la medida de la hipotenusa es igual a "+h);// y se la muestras al usuario
+    }
+    public static double PedirCateto(){// metodo para pedir datos por teclado
+        double c;
+        Scanner teclado = new Scanner(System.in);
+        c = teclado.nextDouble();
+        return c;
+    }
+    public static double calcularH(double c1,double c2){// metodo para calcular la hipotenusa
+        double h;
+        h = Math.sqrt((Math.pow(c1, 2))+Math.pow(c2, 2));// usando operaciones matematicas se calcula el valor para inicialisar la H
+        return h;
+    }
+}
