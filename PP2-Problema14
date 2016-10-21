@@ -1,0 +1,43 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package problem14;
+
+/**
+ *
+ * @author Alejandro
+ */
+public class Problem14 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        int [][]v = new int [7][7];// declara el arreglo de 7x7
+        v = pedirV(v);
+        mostrarV(v);
+    }
+    public static int [][] pedirV(int [][] v){
+        for(int i = 0;i<v.length;i++){// llena cada columna con los valores
+            for (int w = 0;w<v.length;w++){// ciclo for que llena la otra parte del arreglo
+            
+                if(i==w){// esto crea la linea de 1
+                    v[i][w]=1;
+                }else {
+                    v[i][w]=0;// esto cancela los demas valores haciendolos 0
+                }
+            }
+        }
+        return v;
+    }
+    public static void mostrarV(int[][] v){// este metodo es para imprimirlos en forma de tabla
+        for(int i=0;i<v.length;i++){
+            for(int w=0;w<v.length;w++){
+                System.out.print(v[i][w]+"\t");
+            }
+            System.out.print("\n");
+        }
+    }
+    }
